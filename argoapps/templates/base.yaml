@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: base-demo
-  namespace: demo
+  namespace: services
 spec:
   destination:
     namespace: demo
