@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: base-demo
+  namespace: demo
+spec:
+  destination:
+    namespace: demo
+    server: "https://kubernetes.default.svc"
+  source:
+    path: manifest
+    repoURL: "https://github.com/1Psy/argocd-vault-example.git"
+    targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

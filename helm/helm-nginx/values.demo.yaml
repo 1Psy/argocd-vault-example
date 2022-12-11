@@ -1,0 +1,24 @@
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: nginx.dev
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+configmap:
+  TEST: test1
+secrets:
+  SECRET_KEY: <path:dev/data/nginx#SECRET_KEY>
