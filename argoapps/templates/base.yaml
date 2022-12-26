@@ -11,8 +11,8 @@ spec:
     path: manifest
     repoURL: "https://github.com/1Psy/argocd-vault-example.git"
     targetRevision: HEAD
-    plugin:
-      name: argocd-vault-plugin
+    plugin: {}
+    
   project: default
   syncPolicy:
     automated:
